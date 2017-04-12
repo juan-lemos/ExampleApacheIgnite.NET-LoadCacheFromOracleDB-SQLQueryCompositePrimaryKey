@@ -78,19 +78,10 @@ namespace testIgnite.CacheStores
                     dataReader.Read();
                     // Read data, return as object
                     TestObject obj = new TestObject();
-                    TestObjectPK pk = new TestObjectPK();
                     for (int i = 0; i < dataReader.FieldCount; i++)
                     {
                         String columnName = dataReader.GetName(i);
-                        if (columnName.Equals("ID"))
-                        {
-                            pk.ID = dataReader.GetInt32(i);
-                        }
-                        else if (columnName.Equals("NAME"))
-                        {
-                            pk.NAME = dataReader.GetString(i);
-                        }
-                        else if (columnName.Equals("VALUE"))
+                        if (columnName.Equals("VALUE"))
                         {
                             obj.VALUE = dataReader.GetString(i);
                         }
