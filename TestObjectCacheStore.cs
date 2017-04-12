@@ -109,7 +109,7 @@ namespace testIgnite.CacheStores
                           WHEN DUP_VAL_ON_INDEX THEN
                 UPDATE TESTOBJECT
                 SET VALUE = :val
-                WHERE ID = :key; and NAME=:name
+                WHERE ID = :key and NAME=:name;
                         END; ";
                 cmd.Connection = conn;
                 cmd.BindByName = true;  ///////because i will name the paramaters
